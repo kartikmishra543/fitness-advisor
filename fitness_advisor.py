@@ -2,16 +2,15 @@
 # Fitness Advisor
 # Final Project for Code in Place 2026
 #
-# This program helps users track their health and
-# fitness. It calculates BMI and BMR, tracks
-# calories, steps, exercises, and weight history,
-# and provides simple fitness recommendations.
+# This program helps users track their health
+# and fitness. It calculates BMI and BMR,
+# estimates daily calorie needs, tracks calories,
+# steps, water intake, exercises, and weight
+# history, and provides personalized advice.
 # --------------------------------------------------
 
 
 # Calculate Body Mass Index (BMI)
-# BMI helps determine whether a person's weight
-# is healthy for their height.
 def calculate_bmi(weight, height):
     height_m = height / 100
     bmi = weight / (height_m ** 2)
@@ -19,9 +18,8 @@ def calculate_bmi(weight, height):
 
 
 # Calculate Basal Metabolic Rate (BMR)
-# BMR is the number of calories the body needs
-# each day to perform basic functions such as
-# breathing and circulation while at rest.
+# BMR estimates how many calories your body
+# needs each day while at rest.
 def calculate_bmr(weight, height, age, gender):
 
     if gender == "male":
@@ -32,8 +30,7 @@ def calculate_bmr(weight, height, age, gender):
     return bmr
 
 
-# Convert BMI value into a category that is easier
-# for users to understand.
+# Return BMI category
 def get_bmi_category(bmi):
 
     if bmi < 18.5:
@@ -49,54 +46,57 @@ def get_bmi_category(bmi):
         return "Obese"
 
 
-# Use previous weight measurements to estimate
-# what the user's weight may be next week.
-# This is a simple trend calculation.
+# Predict next week's weight using past trends
 def predict_weight(weight_history):
 
     if len(weight_history) < 2:
         return weight_history[-1]
 
-    change = (
+    average_change = (
         weight_history[-1] - weight_history[0]
     ) / (len(weight_history) - 1)
 
-    predicted_weight = weight_history[-1] + change
+    predicted_weight = (
+        weight_history[-1] + average_change
+    )
 
     return predicted_weight
 
 
-# Provide fitness suggestions based on BMI and
-# average daily steps.
-def give_advice(bmi, average_steps):
+# Give personalized fitness advice
+def give_advice(bmi, average_steps, average_water):
 
-    print("\nPersonalized Advice")
+    print("\nPERSONALIZED ADVICE")
 
     if bmi < 18.5:
-        print("- Consider increasing your calorie intake.")
-        print("- Add strength training exercises.")
+        print("- Consider increasing healthy calorie intake.")
+        print("- Include strength training exercises.")
 
     elif bmi > 25:
-        print("- Try increasing daily activity.")
-        print("- Consider reducing calorie intake.")
+        print("- Try increasing physical activity.")
+        print("- Monitor your calorie intake carefully.")
 
     else:
         print("- Your BMI is in a healthy range.")
 
     if average_steps < 5000:
         print("- Try walking more each day.")
-
     elif average_steps >= 8000:
         print("- Great job staying active!")
+
+    if average_water < 2:
+        print("- Try drinking more water each day.")
+    else:
+        print("- Great job staying hydrated!")
 
 
 def main():
 
-    print("=" * 40)
-    print("        FITNESS ADVISOR")
-    print("=" * 40)
+    print("=" * 50)
+    print("            FITNESS ADVISOR")
+    print("=" * 50)
 
-    # Collect basic information from the user
+    # Collect user information
 
     name = input("Enter your name: ")
 
@@ -114,7 +114,7 @@ def main():
         input("Enter your height (cm): ")
     )
 
-    # Calculate health metrics
+    # Calculate BMI and BMR
 
     bmi = calculate_bmi(weight, height)
 
@@ -125,18 +125,17 @@ def main():
         gender
     )
 
-    print("\nChoose Activity Level")
+    # Activity level selection
+
+    print("\nChoose Your Activity Level")
     print("1. Sedentary")
     print("2. Lightly Active")
     print("3. Moderately Active")
     print("4. Very Active")
 
     activity = int(
-        input("Enter choice: ")
+        input("Enter choice (1-4): ")
     )
-
-    # Activity level determines how many calories
-    # are burned based on lifestyle.
 
     activity_levels = {
         1: 1.2,
@@ -149,7 +148,30 @@ def main():
         bmr * activity_levels[activity]
     )
 
-    # Store calorie data for the last 7 days
+    # Fitness goal
+
+    print("\nChoose Your Fitness Goal")
+    print("1. Lose Weight")
+    print("2. Maintain Weight")
+    print("3. Gain Weight")
+
+    goal = int(
+        input("Enter choice (1-3): ")
+    )
+
+    if goal == 1:
+        target_calories = daily_calories - 500
+        goal_name = "Lose Weight"
+
+    elif goal == 2:
+        target_calories = daily_calories
+        goal_name = "Maintain Weight"
+
+    else:
+        target_calories = daily_calories + 500
+        goal_name = "Gain Weight"
+
+    # Track calorie intake
 
     calorie_history = []
 
@@ -165,7 +187,7 @@ def main():
 
         calorie_history.append(calories)
 
-    # Store step data for the last 7 days
+    # Track daily steps
 
     step_history = []
 
@@ -181,8 +203,23 @@ def main():
 
         step_history.append(steps)
 
-    # Allow the user to enter exercises until
-    # they type "done"
+    # Track water intake
+
+    water_history = []
+
+    print(
+        "\nEnter water intake for the last 7 days (liters)"
+    )
+
+    for day in range(1, 8):
+
+        water = float(
+            input("Day " + str(day) + ": ")
+        )
+
+        water_history.append(water)
+
+    # Exercise log
 
     exercises = []
 
@@ -198,7 +235,7 @@ def main():
 
         exercises.append(exercise)
 
-    # Store weight history for the previous weeks
+    # Weight history
 
     weight_history = []
 
@@ -226,6 +263,11 @@ def main():
         / len(step_history)
     )
 
+    average_water = (
+        sum(water_history)
+        / len(water_history)
+    )
+
     # Predict future weight
 
     predicted_weight = predict_weight(
@@ -242,14 +284,17 @@ def main():
     if average_steps >= 8000:
         fitness_score += 30
 
-    if average_calories <= daily_calories:
-        fitness_score += 30
+    if average_water >= 2:
+        fitness_score += 15
 
-    # Display final report
+    if average_calories <= target_calories:
+        fitness_score += 15
 
-    print("\n" + "=" * 40)
-    print("          FITNESS REPORT")
-    print("=" * 40)
+    # Display report
+
+    print("\n" + "=" * 50)
+    print("             FITNESS REPORT")
+    print("=" * 50)
 
     print("Name:", name)
     print("Age:", age)
@@ -268,6 +313,16 @@ def main():
     )
 
     print(
+        "Fitness Goal:",
+        goal_name
+    )
+
+    print(
+        "Target Calories:",
+        round(target_calories, 2)
+    )
+
+    print(
         "\nAverage Daily Calories:",
         round(average_calories, 2)
     )
@@ -275,6 +330,12 @@ def main():
     print(
         "Average Daily Steps:",
         round(average_steps, 2)
+    )
+
+    print(
+        "Average Water Intake:",
+        round(average_water, 2),
+        "liters"
     )
 
     print("\nExercises Performed:")
@@ -296,12 +357,11 @@ def main():
 
     give_advice(
         bmi,
-        average_steps
+        average_steps,
+        average_water
     )
 
-    print(
-        "\nThank you for using Fitness Advisor!"
-    )
+    print("\nThank you for using Fitness Advisor!")
 
 
 if __name__ == "__main__":
