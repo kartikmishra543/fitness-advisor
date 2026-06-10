@@ -1,0 +1,96 @@
+Terminal
+% ==================================================
+            FITNESS ADVISOR
+==================================================
+Enter your name: Aaron
+Enter your age: 23
+Enter gender (male/female): male
+Enter your weight (kg): 82
+Enter your height (cm): 175
+
+Choose Your Activity Level
+1. Sedentary
+2. Lightly Active
+3. Moderately Active
+4. Very Active
+Enter choice (1-4): 2
+
+Choose Your Fitness Goal
+1. Lose Weight
+2. Maintain Weight
+3. Gain Weight
+Enter choice (1-3): 2
+
+Enter calories consumed during the last 7 days
+Day 1: 2300
+Day 2: 2021
+Day 3: 2200
+Day 4: 2100
+Day 5: 2300
+Day 6: 2031
+Day 7: 3201
+
+Enter steps walked during the last 7 days
+Day 1: 2301
+Day 2: 3302
+Day 3: 2300
+Day 4: 3001
+Day 5: 9991
+Day 6: 0291
+Day 7: 3094
+
+Enter water intake for the last 7 days (liters)
+Day 1: 2
+Day 2: 2
+Day 3: 2
+Day 4: 2
+Day 5: 2
+Day 6: 2
+Day 7: 2
+
+Exercise Log
+Type 'done' when finished.
+Exercise: pull up
+Exercise: push up
+Exercise: done
+
+Enter your weight history for the last 4 weeks
+Week 1: 82
+Week 2: 81
+Week 3: 78
+Week 4: 79
+
+==================================================
+             FITNESS REPORT
+==================================================
+Name: Aaron
+Age: 23
+
+BMI: 26.78
+BMI Category: Overweight
+
+BMR: 1896.17
+Estimated Daily Calories: 2607.23
+Fitness Goal: Maintain Weight
+Target Calories: 2607.23
+
+Average Daily Calories: 2307.57
+Average Daily Steps: 3468.57
+Average Water Intake: 2.0 liters
+
+Exercises Performed:
+- pull up
+- push up
+
+Fitness Score: 30 /100
+
+Predicted Weight Next Week: 78.0 kg
+
+PERSONALIZED ADVICE
+- Try increasing physical activity.
+- Monitor your calorie intake carefully.
+- Try walking more each day.
+- Great job staying hydrated!
+
+Thank you for using Fitness Advisor!
+% 
