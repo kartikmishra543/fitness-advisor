@@ -1,4 +1,4 @@
-# 🏋️ Fitness Advisor
+# Fitness Advisor
 
 Fitness Advisor is a Python-based health and fitness application that I developed as my final project for Code in Place 2026, a programming course offered by Stanford University.
 
@@ -8,7 +8,7 @@ The program helps users track important health metrics, estimate calorie require
 
 ## Features
 
-### 📊 BMI Calculator
+### BMI Calculator
 
 Calculates Body Mass Index (BMI) using a user's height and weight and classifies the result into standard health categories:
 
@@ -17,15 +17,15 @@ Calculates Body Mass Index (BMI) using a user's height and weight and classifies
 * Overweight
 * Obese
 
-### 🔥 BMR Calculator
+### BMR Calculator
 
 Calculates Basal Metabolic Rate (BMR), which estimates the number of calories the body needs at rest.
 
-### 🍽️ Daily Calorie Requirement Estimator
+### Daily Calorie Requirement Estimator
 
 Uses BMR and activity level to estimate daily calorie needs for maintaining weight.
 
-### 🚶 Activity Level Selection
+### Activity Level Selection
 
 Allows users to choose from different activity levels:
 
@@ -34,7 +34,7 @@ Allows users to choose from different activity levels:
 * Moderately Active
 * Very Active
 
-### 🎯 Fitness Goal Recommendations
+### Fitness Goal Recommendations
 
 Provides personalized suggestions based on fitness goals such as:
 
@@ -42,23 +42,23 @@ Provides personalized suggestions based on fitness goals such as:
 * Weight Maintenance
 * Weight Gain
 
-### 💧 Water Intake Tracking
+### Water Intake Tracking
 
 Tracks daily water consumption and encourages healthy hydration habits.
 
-### 🏃 Exercise Tracking
+### Exercise Tracking
 
 Allows users to record exercise activity as part of their fitness routine.
 
-### 📈 Weight History Tracking
+### Weight History Tracking
 
 Stores and analyzes weight history entered by the user.
 
-### 🔮 Weight Prediction
+### Weight Prediction
 
 Predicts future weight trends using previous weight records.
 
-### 💡 Personalized Fitness Advice
+### Personalized Fitness Advice
 
 Generates customized recommendations based on the user's health data and fitness goals.
 
@@ -140,7 +140,9 @@ Follow the prompts displayed in the terminal and enter the required information 
 
 ### Fitness Advisor Running in the Code in Place IDE
 
-![Fitness Advisor Screenshot](screenshot.png)<img width="1917" height="941" alt="Screenshot 2026-06-10 232103" src="https://github.com/user-attachments/assets/70940c84-0652-465b-b394-e0cd9875afec" />
+!<img width="1917" height="941" alt="Screenshot 2026-06-10 232103" src="https://github.com/user-attachments/assets/70940c84-0652-465b-b394-e0cd9875afec" /><img width="1670" height="682" alt="image" src="https://github.com/user-attachments/assets/5804ea49-8278-4711-88a4-7406ce4fead8" /><img width="1885" height="789" alt="Screenshot 2026-06-10 234906" src="https://github.com/user-attachments/assets/a2bf626c-c6f7-498a-98ab-03297bf4ec51" />
+
+
 
 
 ---
