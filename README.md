@@ -140,7 +140,8 @@ Follow the prompts displayed in the terminal and enter the required information 
 
 ### Fitness Advisor Running in the Code in Place IDE
 
-![Fitness Advisor Screenshot](screenshot.png)
+![Fitness Advisor Screenshot](screenshot.png)<img width="1917" height="941" alt="Screenshot 2026-06-10 232103" src="https://github.com/user-attachments/assets/70940c84-0652-465b-b394-e0cd9875afec" />
+
 
 ---
 
