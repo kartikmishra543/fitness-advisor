@@ -6,22 +6,22 @@ Fitness Advisor helps users understand their health metrics by calculating BMI (
 
 ## Features
 
-* BMI Calculator
+> BMI Calculator
 
 - Calculates Body Mass Index using user height and weight
 - Categorizes BMI status (Underweight, Normal, Overweight, etc.)
 
-* BMR Calculator
+> BMR Calculator
 
 - Calculates Basal Metabolic Rate
 - Supports personalized calorie estimation
 
-* Daily Calorie Requirement Estimator
+> Daily Calorie Requirement Estimator
 
 - Estimates maintenance calories
 - Helps users understand energy needs
 
-* Personalized Fitness Recommendations
+> Personalized Fitness Recommendations
 
 - Weight loss guidance
 - Weight maintenance guidance
